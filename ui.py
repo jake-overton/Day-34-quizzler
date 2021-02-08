@@ -3,6 +3,11 @@ from quiz_brain import QuizBrain
 
 THEME_COLOR = "#375362"
 
+# TODO 1. Add multiple choice questions.
+# 1a. lay out four choices on ui
+# 1b. fill choices at the same time as question. Fill answers randomly if not boolean.
+# 1c. Answers are buttons, text value can be used as answer to check against correct answer.
+
 
 class QuizInterface:
 
@@ -13,12 +18,15 @@ class QuizInterface:
         self.window.config(padx=40, pady=20, bg=THEME_COLOR)
         self.score_label = Label(text=f"Score: 0/{len(self.quiz.question_list)}", fg="white", bg=THEME_COLOR)
         self.score_label.grid(row=0, column=1)
-        true_image = PhotoImage(file="./images/true.png")
-        false_image = PhotoImage(file="./images/false.png")
-        self.true_button = Button(image=true_image, command=self.pressed_true, highlightthickness=0)
-        self.true_button.grid(row=2, column=0)
-        self.false_button = Button(image=false_image, command=self.pressed_false, highlightthickness=0)
-        self.false_button.grid(row=2, column=1)
+        # true_image = PhotoImage(file="./images/true.png")
+        # false_image = PhotoImage(file="./images/false.png")
+        # self.true_button = Button(image=true_image, command=self.pressed_true, highlightthickness=0)
+        # self.true_button.grid(row=2, column=0)
+        # self.false_button = Button(image=false_image, command=self.pressed_false, highlightthickness=0)
+        # self.false_button.grid(row=2, column=1)
+
+        # Set up Buttons
+        # self.answer_1 = Button(text=self.quiz.q_text)
 
         self.canvas = Canvas(height=250, width=300, bg="white")
         self.question_text = self.canvas.create_text(
